@@ -10,20 +10,31 @@ var pigLatin = function(input) {
     var splitWord = letterWord.split("");
     alert(splitWord);
 
-    if (splitWord[0]=== "a" || splitWord[0]=== "e" || splitWord[0]=== "i" || splitWord[0]=== "o" || splitWord[0]=== "u") {
+  splitWord.forEach(function(letter){
+    if (vowels.indexOf(letter) > -1){
       var joinedWord = splitWord.join("");
       var newWord = joinedWord + "ay";
       alert(newWord);
-    } else {
+    } else if (consonants.indexOf(letter) > -1) {
       var firstLetter = splitWord.shift();
       splitWord.push(firstLetter);
       newWord = splitWord.join("")+ "ay";
       alert(newWord);
     }
-    return newWord;
+  })
+
+    // if (splitWord[0]=== "a" || splitWord[0]=== "e" || splitWord[0]=== "i" || splitWord[0]=== "o" || splitWord[0]=== "u") {
+    //   var joinedWord = splitWord.join("");
+    //   var newWord = joinedWord + "ay";
+    //   alert(newWord);
+    // } else {
+    //   var firstLetter = splitWord.shift();
+    //   splitWord.push(firstLetter);
+    //   newWord = splitWord.join("")+ "ay";
+    //   alert(newWord);
+    // }
 
 });//end of words function
-
 }; //end of pigLatin function
 
 
